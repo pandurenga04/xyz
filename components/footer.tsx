@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 const quickLinks = [
@@ -26,7 +27,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative pt-24 pb-8 overflow-hidden">
+    <footer className="relative pt-16 md:pt-20 pb-8 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-secondary/10 to-background" />
       
@@ -35,16 +36,20 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 md:mb-16">
           {/* Brand Column */}
           <div className="animate-fade-in-up">
             <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-background font-bold text-xl">S</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="SDEC Logo"
+                width={48}
+                height={48}
+                className="transition-transform duration-500 group-hover:scale-110 object-contain"
+              />
               <div className="flex flex-col">
-                <span className="text-foreground font-bold text-xl tracking-wider">SDEC</span>
-                <span className="text-muted-foreground text-xs tracking-widest">CONSTRUCTIONS</span>
+                <span className="text-foreground font-bold text-lg tracking-wider">SDEC</span>
+                <span className="text-muted-foreground text-xs tracking-widest">Sri Durgai Eswari Constructions</span>
               </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -123,7 +128,7 @@ export default function Footer() {
                   className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <Phone className="w-5 h-5 mt-0.5 text-primary/70 group-hover:text-primary" />
-                  <span className="text-sm">+91 8056107212</span>
+                  <span className="text-sm">+91 8056107212 , +91 8754610888</span>
                 </a>
               </li>
               <li>
@@ -147,14 +152,14 @@ export default function Footer() {
         <div className="pt-8 border-t border-border/30">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              2024 Sri Durgai Eswari Constructions. All rights reserved.
+              2026. Bit Patterns AI & Digital Solutions. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Privacy Policy
+              <Link href="https://www.bitpatterns.in" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Bit Patterns
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Terms of Service
+              <Link href="/services" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Services
               </Link>
             </div>
           </div>
